@@ -24,11 +24,16 @@ class App extends Component {
 
         this.setState({command:command});
 
+        // is there a valid PLACE COMMAND?
+
+        const isValid =/^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(command)
+        console.log('isValid=',isValid);
+
+        if (!isValid) return;
+
         //todo remove
         debugger;
         switch (command) {
-            case 'PLACE':
-                break;
 
             case 'MOVE':
 
