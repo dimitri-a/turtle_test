@@ -4,21 +4,20 @@ import Grid from './components/Grid';
 
 class App extends Component {
 
-
     constructor(props) {
         super();
         this.props = props;
         this.state = {
             x: 0,
             y: 0,
-            command: 'PLACE 3,,EAST MOVE',
+            command: 'MOVE',
             facing: 'NORTH'
         }
     }
 
     //processes commands
     process = () => {
-        
+
         console.log('process');
 
         const val = document.getElementById('val').value;
@@ -31,6 +30,8 @@ class App extends Component {
 
         const cmds = this.state.command.split(' ');
         console.log('cmds=', cmds);
+        //todo remove
+        debugger;
 
         cmds.every(c => {
             switch (c) {
