@@ -18,8 +18,8 @@ class Grid extends Component {
 
                 <button onClick={this.props.process}>Go</button>
 
+                <Box x={this.props.x} y ={this.props.y}></Box>
 
-                <Box></Box>
                 <pre>
                     {JSON.stringify(this.props.x, null, 2)},
                     {JSON.stringify(this.props.y, null, 2)}
