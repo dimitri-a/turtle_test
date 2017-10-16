@@ -8,8 +8,8 @@ class App extends Component {
         super();
         this.props = props;
         this.state = {
-            x: 0,
-            y: 0,
+            x: 1,
+            y: 1,
             command: 'MOVE',
             facing: 'NORTH'
         }
@@ -18,29 +18,45 @@ class App extends Component {
     //processes commands
     process = () => {
 
-        console.log('process');
-
         const val = document.getElementById('val').value;
 
-        console.log('value', val);
+        console.log('input value', val);
 
-        //this.setState({currentCommand: val});
-
-        console.log('this.state.currentCommand=', this.state.command);
+        console.log('this.state.command=', this.state.command);
 
         const cmds = this.state.command.split(' ');
-        console.log('cmds=', cmds);
-        //todo remove
-        debugger;
+
+        console.log('command array items =', cmds);
+
 
         cmds.every(c => {
+
+            console.log('hello');
+            //todo remove
+            debugger;
             switch (c) {
                 case 'PLACE':
-
                     break;
 
                 case 'MOVE':
-                    this.state.facing === 'LEFT' ? this.setState({x: this.state.x - 1}) : this.setState({x: this.state.x + 1})
+
+                    switch (this.state.facing) {
+                        case 'EAST':
+                            this.setState({x: this.state.x + 1});
+                            break;
+
+                        case 'SOUTH':
+                            this.setState({y: this.state.y - 1});
+                            break;
+
+                        case 'WEST':
+                            this.setState({x: this.state.x - 1});
+                            break;
+
+                        case 'NORTH':
+                            this.setState({y: this.state.y + 1});
+                            break;
+                    }
                     break;
 
                 case 'LEFT':
@@ -64,7 +80,6 @@ class App extends Component {
                     }
 
                 case 'RIGHT':
-
                     switch (this.state.facing) {
                         case 'EAST':
                             this.setState({facing: 'SOUTH'});
@@ -79,18 +94,20 @@ class App extends Component {
                             break;
 
                         case 'NORTH':
+                            console.log('sss');
                             this.setState({facing: 'EAST'});
                             break;
                     }
+
                 case 'REPORT':
                     console.log('x=', this.state.x);
                     console.log('y=', this.state.y);
                     console.log('facing=', this.state.facing);
+
                 default:
                     break;
             }
         })
-
 
     }
 
@@ -100,8 +117,7 @@ class App extends Component {
             <div className="App">
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} process={this.process}/>
             </div>
-        )
-            ;
+        );
     }
 }
 
