@@ -8,106 +8,99 @@ class App extends Component {
         super();
         this.props = props;
         this.state = {
-            x: 1,
-            y: 1,
-            command: 'MOVE',
-            facing: 'NORTH'
+            x: 0,
+            y: 0,
+            command: '',
+            facing: 'EAST'
         }
     }
 
     //processes commands
     process = () => {
 
-        const val = document.getElementById('val').value;
+        const command = document.getElementById('val').value;
 
-        console.log('input value', val);
+        console.log('input value', command);
 
-        console.log('this.state.command=', this.state.command);
+        this.setState({command:command});
 
-        const cmds = this.state.command.split(' ');
+        //todo remove
+        debugger;
+        switch (command) {
+            case 'PLACE':
+                break;
 
-        console.log('command array items =', cmds);
+            case 'MOVE':
 
+                switch (this.state.facing) {
+                    case 'EAST':
+                        this.setState({x: this.state.x + 1});
+                        break;
 
-        cmds.every(c => {
+                    case 'SOUTH':
+                        this.setState({y: this.state.y - 1});
+                        break;
 
-            console.log('hello');
-            //todo remove
-            debugger;
-            switch (c) {
-                case 'PLACE':
-                    break;
+                    case 'WEST':
+                        this.setState({x: this.state.x - 1});
+                        break;
 
-                case 'MOVE':
+                    case 'NORTH':
+                        this.setState({y: this.state.y + 1});
+                        break;
+                }
+                break;
 
-                    switch (this.state.facing) {
-                        case 'EAST':
-                            this.setState({x: this.state.x + 1});
-                            break;
+            case 'LEFT':
 
-                        case 'SOUTH':
-                            this.setState({y: this.state.y - 1});
-                            break;
+                switch (this.state.facing) {
+                    case 'EAST':
+                        this.setState({facing: 'NORTH'});
+                        break;
 
-                        case 'WEST':
-                            this.setState({x: this.state.x - 1});
-                            break;
+                    case 'SOUTH':
+                        this.setState({facing: 'EAST'});
+                        break;
 
-                        case 'NORTH':
-                            this.setState({y: this.state.y + 1});
-                            break;
-                    }
-                    break;
+                    case 'WEST':
+                        this.setState({facing: 'SOUTH'});
+                        break;
 
-                case 'LEFT':
+                    case 'NORTH':
+                        this.setState({facing: 'WEST'});
+                        break;
+                }
+                break;
 
-                    switch (this.state.facing) {
-                        case 'EAST':
-                            this.setState({facing: 'NORTH'});
-                            break;
+            case 'RIGHT':
+                switch (this.state.facing) {
+                    case 'EAST':
+                        this.setState({facing: 'SOUTH'});
+                        break;
 
-                        case 'SOUTH':
-                            this.setState({facing: 'EAST'});
-                            break;
+                    case 'SOUTH':
+                        this.setState({facing: 'WEST'});
+                        break;
 
-                        case 'WEST':
-                            this.setState({facing: 'SOUTH'});
-                            break;
+                    case 'WEST':
+                        this.setState({facing: 'NORTH'});
+                        break;
 
-                        case 'NORTH':
-                            this.setState({facing: 'WEST'});
-                            break;
-                    }
+                    case 'NORTH':
+                        console.log('sss');
+                        this.setState({facing: 'EAST'});
+                        break;
+                }
+                break;
 
-                case 'RIGHT':
-                    switch (this.state.facing) {
-                        case 'EAST':
-                            this.setState({facing: 'SOUTH'});
-                            break;
+            case 'REPORT':
+                console.log('REPORT x=', this.state.x);
+                console.log('REPORT y=', this.state.y);
+                console.log('REPORT facing=', this.state.facing);
 
-                        case 'SOUTH':
-                            this.setState({facing: 'WEST'});
-                            break;
-
-                        case 'WEST':
-                            this.setState({facing: 'NORTH'});
-                            break;
-
-                        case 'NORTH':
-                            console.log('sss');
-                            this.setState({facing: 'EAST'});
-                            break;
-                    }
-
-                case 'REPORT':
-                    console.log('x=', this.state.x);
-                    console.log('y=', this.state.y);
-                    console.log('facing=', this.state.facing);
-
-                default:
-                    break;
-            }
-        })
+            default:
+                break;
+        }
 
     }
 

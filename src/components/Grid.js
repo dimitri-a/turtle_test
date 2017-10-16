@@ -9,18 +9,20 @@ class Grid extends Component {
 
 
     render() {
-        console.log('this.props=',this.props);
+        console.log('this.props=', this.props);
         return (
             <div className="Grid">
 
                 <input id='val' type='text'/>
                 <button onClick={this.props.process}>Go</button>
 
-                <pre>
-              {JSON.stringify(this.props.x, null, 2)},
+
+
+                  <pre>
+                    {JSON.stringify(this.props.x, null, 2)},
                     {JSON.stringify(this.props.y, null, 2)}
                     {JSON.stringify(this.props.facing, null, 2)}
-            </pre>
+                  </pre>
 
 
             </div>
