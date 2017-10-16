@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Box from './Box';
 
 class Grid extends Component {
 
@@ -13,12 +14,13 @@ class Grid extends Component {
         return (
             <div className="Grid">
 
-                <input id='val' type='text'/>
+                <input id='val' type='text' placeholder="Enter command"/>
+
                 <button onClick={this.props.process}>Go</button>
 
 
-
-                  <pre>
+                <Box></Box>
+                <pre>
                     {JSON.stringify(this.props.x, null, 2)},
                     {JSON.stringify(this.props.y, null, 2)}
                     {JSON.stringify(this.props.facing, null, 2)}
