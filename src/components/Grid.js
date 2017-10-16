@@ -9,7 +9,7 @@ class Grid extends Component {
             x: 0,
             y: 0,
             command: '',
-            direction: ''
+            facing: ''
         }
     }
 
@@ -24,13 +24,41 @@ class Grid extends Component {
 
         console.log('this.state.currentCommand=', this.state.currentCommand);
 
-        switch (this.state.currentCommand) {
-            case 'MOVE':
-                this.state.direction === 'LEFT' ? this.setState({x: this.state.x - 1}) : this.setState({x: this.state.x + 1})
-                break;
-            default:
-                break;
-        }
+        this.state.currentCommand.each(c => {
+            switch (c) {
+                case 'PLACE':
+
+                    break;
+
+                case 'MOVE':
+                    this.state.facing === 'LEFT' ? this.setState({x: this.state.x - 1}) : this.setState({x: this.state.x + 1})
+                    break;
+
+                case 'LEFT':
+
+                    switch (this.state.facing) {
+                        case 'EAST':
+                            this.setState({facing: 'NORTH'});
+                            break;
+
+                        case 'SOUTH':
+                            this.setState({facing: 'EAST'});
+                            break;
+
+                        case 'WEST':
+                            this.setState({facing: 'SOUTH'});
+                            break;
+
+                        case 'NORTH':
+                            this.setState({facing: 'WEST'});
+                            break;
+                    }
+
+                default:
+                    break;
+            }
+        })
+
 
     }
 
