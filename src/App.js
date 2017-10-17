@@ -159,10 +159,10 @@ class App extends Component {
                         }
                         break;
 
-                    // case 'REPORT':
-                    //     console.log('REPORT x=', this.state.x);
-                    //     console.log('REPORT y=', this.state.y);
-                    //     console.log('REPORT facing=', this.state.facing);
+                    case 'REPORT':
+                        console.log('REPORT x=', this.state.x);
+                        console.log('REPORT y=', this.state.y);
+                        console.log('REPORT facing=', this.state.facing);
 
                     default:
                         break;
@@ -170,7 +170,6 @@ class App extends Component {
             }
 
             console.log('APP.JS test these values again:this.state=', this.state);
-
 
         });
 
@@ -181,7 +180,7 @@ class App extends Component {
     render() {
         console.log('app.js start render');
         return (
-            <div className="App" onKeyDown={this.handleKeyDown}>
+            <div className="App" onKeyDown={this.handleKeyDown} tabIndex="0">
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
                       process={this.process} command={this.state.command} changeCommand={this.onChange}
                       changePosition={this.onChangePosition}/>
