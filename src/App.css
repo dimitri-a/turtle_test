@@ -26,14 +26,11 @@ body {
     grid-auto-flow: column;
 }
 
-.east {
+.rotate_ninety {
     -moz-transform: rotate(90deg) translateX(150px);
     -webkit-transform: rotate(90deg) translateX(150px);
     -o-transform: rotate(90deg) translateX(150px);
     -ms-transform: rotate(90deg) translateX(150px);
     transform: rotate(90deg) translateX(150px);
-    background-image: url("./images/turtle-north.png");
-    background-repeat: no-repeat;
-    background-size: 50px 50px;
 }
 
