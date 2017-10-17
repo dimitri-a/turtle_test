@@ -9,8 +9,10 @@ class Grid extends Component {
     }
 
 
-    handleChange = (e) =>{
-        this.props.changeCommand(e.target.value)
+    //triggers process on app.js
+    handleClick = (e) => {
+        console.log('grid.js handleClick , calls App.js::process()');
+        this.props.process(document.getElementById('commandText').value)
     }
 
 
@@ -18,17 +20,18 @@ class Grid extends Component {
         return (
             <div className="Grid">
 
-                <input id='val' type='text' value={this.props.command} onChange={this.handleChange} placeholder="enter command"/>
+                <input id='commandText' type='text' placeholder="enter command"/>
 
-                <button onClick={this.props.process}>Go</button>
+                <button onClick={this.handleClick}>Go</button>
 
-                <Box x={this.props.x} y ={this.props.y} init={this.props.init} facing={this.props.facing} changePosition={this.props.changePosition}></Box>
+                <Box x={this.props.x} y={this.props.y} init={this.props.init} facing={this.props.facing}
+                     changePosition={this.props.changePosition}></Box>
 
                 <pre>
                     {JSON.stringify(this.props.x, null, 2)},
                     {JSON.stringify(this.props.y, null, 2)}
                     {JSON.stringify(this.props.facing, null, 2)}
-                  </pre>
+                </pre>
 
 
             </div>

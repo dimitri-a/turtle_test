@@ -41,8 +41,7 @@ export default class Box extends Component {
 
     handleClick = (e) =>
     {
-
-        console.log('BOX.js which box is clicked on ,e.target.id=',e.target.id);
+        console.log('BOX.js handleclick which box is clicked on ,e.target.id=',e.target.id);
         this.props.changePosition(e.target.id);
     }
 

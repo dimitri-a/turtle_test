@@ -5,10 +5,11 @@ import Grid from './components/Grid';
 class App extends Component {
 
     constructor() {
+        console.log('app.js constructor');
         super();
         this.state = {
-            x: 0,
-            y: 0,
+            x: 1,
+            y: 1,
             command: '',
             facing: 'EAST',
             init: false
@@ -16,7 +17,7 @@ class App extends Component {
     }
 
     handleKeyDown = (e) => {
-        console.log('handlekeydown');
+        console.log('app.js handlekeydown');
 
         switch (e.keyCode) {
             case 37:
@@ -41,53 +42,58 @@ class App extends Component {
 
     onChange = (cmd) => {
         this.setState({command: cmd});
-
+        console.log('app.js onchange');
     }
 
 
     //click to change position
     onChangePosition = (xy) => {
-        console.log('APP.js onChangePosition , ref value=',xy);
+        console.log('APP.js onChangePosition , ref value=', xy);
 
-        this.setState({x:xy.substring(0,1)});
-        this.setState({y:xy.substring(1,2)});
+        this.setState({x: xy.substring(0, 1)});
+        this.setState({y: xy.substring(1, 2)});
 
-        this.setState({command:'PLACE '+ this.state.x +',' +this.state.y +' '+ this.state.facing});
+        this.setState({command: 'PLACE ' + this.state.x + ',' + this.state.y + ' ' + this.state.facing});
 
         this.process();
     }
 
     //processes this.state.commands
-    process = () => {
+    process = (command) => {
         let init = false;
+        
+        console.log('app.js this should be the command from the Grid comp=',command);
 
         console.log('APP.js starting App.process()');
+        console.log('APP.js ,check to see setstate this.state.x=', this.state.x);
+        console.log('this.state.y=', this.state.y);
 
-       console.log('APP.js ,check to see setstate went ok from onchangepos: this.state.x=',this.state.x);
-       console.log('this.state.y=',this.state.y);
+        this.setState({command: command},() => {
+            // check to see there a valid PLACE this.state.command?
+            if (this.state.command.indexOf('PLACE') > -1) {
+                const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
+                console.log('APP.js regex for PLACE isValid=', isValid);
 
-        // check to see there a valid PLACE this.state.command?
-        if (this.state.command.indexOf('PLACE') > -1) {
-            const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
-            console.log('APP.js regex for PLACE isValid=', isValid);
+                if (!isValid) return;
 
-            if (!isValid) return;
+                this.setState({init: true});
+                init = true;
 
-            this.setState({init: true});
-            init = true;
+                let placeArr = this.state.command.split(' ');
 
-            let placeArr = this.state.command.split(' ');
+                //set position
+                let coorArr = placeArr[1].split(',');
+                this.setState({x: coorArr[0]});
+                this.setState({y: coorArr[1]});
+                this.setState({facing: placeArr[2]});
 
-            //coordinates
-            let coorArr = placeArr[1].split(',');
-            this.setState({x: coorArr[0]});
-            this.setState({y: coorArr[1]});
-            this.setState({facing: placeArr[2]});
-        }
+                console.log('app.js process, new x value=',coorArr[0]);
+                console.log('app.js process, new y value=',coorArr[1]);
 
-        console.log('this.state', this.state);
-        //todo remove
-        //debugger;
+            }
+
+        });
+
 
         //if there was a valid PLACE this.state.command
         if (init || this.state.init) {
@@ -109,6 +115,8 @@ class App extends Component {
                             break;
 
                         case 'NORTH':
+                            console.log('NORTH facing this.state.x=', this.state.x);
+                            console.log('this.state.y=', this.state.y);
                             this.setState({y: this.state.y + 1});
                             break;
                     }
@@ -155,24 +163,29 @@ class App extends Component {
                     }
                     break;
 
-                case 'REPORT':
-                    console.log('REPORT x=', this.state.x);
-                    console.log('REPORT y=', this.state.y);
-                    console.log('REPORT facing=', this.state.facing);
+                // case 'REPORT':
+                //     console.log('REPORT x=', this.state.x);
+                //     console.log('REPORT y=', this.state.y);
+                //     console.log('REPORT facing=', this.state.facing);
 
                 default:
                     break;
             }
         }
 
+        console.log('APP.JS test these values again:this.state=', this.state);
+
+
     }
 
 
     render() {
+        console.log('app.js start render');
         return (
-            <div className="App" onKeyDown={this.handleKeyDown} >
+            <div className="App" onKeyDown={this.handleKeyDown}>
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
-                      process={this.process} command={this.state.command} changeCommand={this.onChange} changePosition={this.onChangePosition} />
+                      process={this.process} command={this.state.command} changeCommand={this.onChange}
+                      changePosition={this.onChangePosition}/>
             </div>
         );
     }
