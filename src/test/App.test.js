@@ -13,10 +13,8 @@ it('does it render', () => {
     renderer.render(< App />)
     const output = renderer.getRenderOutput()
 
-    //todo expect component top level type
-    console.log(output)
-    // expect(output.type).toBe('header');
-    // expect(output.props.className).toBe('header')
+    expect(output.type).toBe('div');
+    expect(output.props.className).toBe('header')
     //
     // output.props.children.props.onSave('fsakhfkjsdh');
     // expect(props.addTodo).toBeCalled()

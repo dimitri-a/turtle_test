@@ -11,7 +11,7 @@ export default class Box extends Component {
     //set css for turtle
     setClass = () => {
         if (this.props.x >= 0 && this.props.y >= 0 && this.props.init) {
-        //reset style
+            //reset style
             for (let x = 0; x < 5; x++) {
                 for (let y = 0; y < 5; y++) {
                     const rf = "" + x + y;
@@ -33,10 +33,8 @@ export default class Box extends Component {
     }
 
     //Should change position and trigger a PLACE command, in APP.js::process()
-    handleClick = (e) =>
-    {
-        console.log('BOX.js handleclick which box is clicked on ,e.target.id=',e.target.id);
-        this.props.changePosition(e.target.id,'PLACE');
+    handleClick = (e) => {
+        this.props.changePosition(e.target.id, 'PLACE');
     }
 
     render() {
@@ -49,25 +47,21 @@ export default class Box extends Component {
                 <div id="02" className="box box1" onClick={this.handleClick} ref="02"/>
                 <div id="01" className="box box1" onClick={this.handleClick} ref="01"/>
                 <div id="00" className="box box1" onClick={this.handleClick} ref="00"/>
-
                 <div id="14" className="box box1" onClick={this.handleClick} ref="14"/>
                 <div id="13" className="box box1" onClick={this.handleClick} ref="13"/>
                 <div id="12" className="box box1" onClick={this.handleClick} ref="12"/>
                 <div id="11" className="box box1" onClick={this.handleClick} ref="11"/>
                 <div id="10" className="box box1" onClick={this.handleClick} ref="10"/>
-
                 <div id="24" className="box box1" onClick={this.handleClick} ref="24"/>
                 <div id="23" className="box box1" onClick={this.handleClick} ref="23"/>
                 <div id="22" className="box box1" onClick={this.handleClick} ref="22"/>
                 <div id="21" className="box box1" onClick={this.handleClick} ref="21"/>
                 <div id="20" className="box box1" onClick={this.handleClick} ref="20"/>
-
                 <div id="34" className="box box1" onClick={this.handleClick} ref="34"/>
                 <div id="33" className="box box1" onClick={this.handleClick} ref="33"/>
                 <div id="32" className="box box1" onClick={this.handleClick} ref="32"/>
                 <div id="31" className="box box1" onClick={this.handleClick} ref="31"/>
                 <div id="30" className="box box1" onClick={this.handleClick} ref="30"/>
-
                 <div id="44" className="box box1" onClick={this.handleClick} ref="44"/>
                 <div id="43" className="box box1" onClick={this.handleClick} ref="43"/>
                 <div id="42" className="box box1" onClick={this.handleClick} ref="42"/>
