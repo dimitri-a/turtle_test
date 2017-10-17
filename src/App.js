@@ -18,16 +18,24 @@ class App extends Component {
     handleKeyDown = (e) => {
         switch (e.keyCode) {
             case 37:
-                this.setState({x: this.state.x - 1});
+                if (this.state.x >0) {
+                    this.setState({x: this.state.x - 1});
+                }
                 break;
             case 38:
-                this.setState({y: this.state.y + 1});
+                if (this.state.y <4) {
+                    this.setState({y: this.state.y + 1});
+                }
                 break;
             case 39:
-                this.setState({x: this.state.x + 1});
+                if (this.state.x <4) {
+                    this.setState({x: this.state.x + 1});
+                }
                 break;
             case 40:
-                this.setState({y: this.state.y - 1});
+                if (this.state.y >0) {
+                    this.setState({y: this.state.y - 1});
+                }
                 break;
         }
 
@@ -50,8 +58,6 @@ class App extends Component {
     //processes this.state.commands
     process = (cmd) => {
         let init = false;
-        //todo remove
-        debugger;
         this.setState({command: cmd}, () => {
             // check to see there a valid PLACE this.state.command?
             if (this.state.command.indexOf('PLACE') > -1) {
@@ -74,19 +80,29 @@ class App extends Component {
                     case 'MOVE':
                         switch (this.state.facing) {
                             case 'EAST':
-                                this.setState({x: this.state.x + 1});
+                                if (this.state.x <4) {
+                                    this.setState({x: this.state.x + 1});
+                                }
                                 break;
 
                             case 'SOUTH':
-                                this.setState({y: this.state.y - 1});
+                                if (this.state.y > 0) {
+                                    this.setState({y: this.state.y - 1});
+                                }
                                 break;
 
                             case 'WEST':
-                                this.setState({x: this.state.x - 1});
+                                if (this.state.x >0) {
+                                    this.setState({x: this.state.x - 1});
+                                }
                                 break;
 
                             case 'NORTH':
-                                this.setState({y: this.state.y + 1}, () =>{console.log('hopefully y is changed!!',this.state)});
+                                if (this.state.y < 4) {
+                                    this.setState({y: this.state.y + 1}, () => {
+                                        console.log('hopefully y is changed!!', this.state)
+                                    });
+                                }
                                 break;
                         }
                         break;
