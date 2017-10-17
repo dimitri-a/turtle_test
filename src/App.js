@@ -143,7 +143,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App" onKeyDown={this.handleKeyDown} tabIndex="0">
+            <div className="App container" onKeyDown={this.handleKeyDown} tabIndex="0">
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
                       process={this.process} command={this.state.command} changeCommand={this.onChange}
                       changePosition={this.onChangePosition}/>

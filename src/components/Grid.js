@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Box from './Box';
+import { Button } from 'react-bootstrap';
 
 class Grid extends Component {
 
@@ -17,9 +18,9 @@ class Grid extends Component {
 
     render() {
         return (
-            <div className="Grid">
-                <input id='commandText' type='text' placeholder="enter command"/>
-                <button onClick={this.handleClick}>Go</button>
+            <div className="Grid space">
+                <input id='commandText' type='text' className="edge" placeholder="enter command"/>
+                <Button className="btn btn-success but" onClick={this.handleClick}>Go</Button>
                 <Box x={this.props.x} y={this.props.y} init={this.props.init} facing={this.props.facing}
                      changePosition={this.props.changePosition}></Box>
             </div>

@@ -59,3 +59,28 @@ body {
     background-size: 50px 50px;
 }
 
+
+input[type=text] {
+    width: 20%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 12px cadetblue;
+    color: black;
+    box-shadow: 0 0 3px cadetblue; margin: 10px
+}
+
+.but
+{
+    width: 8%;
+    height: 45px;
+}
+
+.space
+{
+    padding: 10px 10px;
+}
+
+div.box:hover {
+    background-color: darkgray;
+}
