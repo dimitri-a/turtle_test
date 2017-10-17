@@ -40,7 +40,7 @@ export default class Box extends Component {
                 {/*<input className="box box1" type="text" ref="04" value="1"/>*/}
 
                 {/*<img src="../images/turtle-north.png"/>*/}
-                <div className="box box1 east" ref="04" />
+                <div className="box box1" ref="04" />
                 <div className="box box1" ref="03" />
                 <div className="box box1" ref="02" />
                 <div className="box box1" ref="01" />
