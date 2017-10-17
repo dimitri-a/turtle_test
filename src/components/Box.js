@@ -36,40 +36,35 @@ export default class Box extends Component {
         this.setClass();
 
         return (
-            <div className="wrapper">
+            <div className="wrapper" >
                 {/*<input className="box box1" type="text" ref="04" value="1"/>*/}
 
-                <div>
-                    <span>
-                        <img src="../images/turtle-north.png"/>
-                    </span>
-                </div>
-
-
-                <input type="text" className="box box1" ref="03" value="2"/>
-                <input type="text" className="box box1" ref="02" value="3"/>
-                <input type="text" className="box box1" ref="01" value="4"/>
-                <input type="text" className="box box1" ref="10" value="5"/>
-                <input type="text" className="box box1" ref="14" value="1"/>
-                <input type="text" className="box box1" ref="13" value="2"/>
-                <input type="text" className="box box1" ref="12" value="3"/>
-                <input type="text" className="box box1" ref="11" value="4"/>
-                <input type="text" className="box box1" ref="00" value="5"/>
-                <input type="text" className="box box1" ref="24" value="1"/>
-                <input type="text" className="box box1" ref="23" value="2"/>
-                <input type="text" className="box box1" ref="22" value="3"/>
-                <input type="text" className="box box1" ref="21" value="4"/>
-                <input type="text" className="box box1" ref="20" value="5"/>
-                <input type="text" className="box box1" ref="34" value="1"/>
-                <input type="text" className="box box1" ref="33" value="2"/>
-                <input type="text" className="box box1" ref="32" value="3"/>
-                <input type="text" className="box box1" ref="31" value="4"/>
-                <input type="text" className="box box1" ref="30" value="5"/>
-                <input type="text" className="box box1" ref="44" value="1"/>
-                <input type="text" className="box box1" ref="43" value="2"/>
-                <input type="text" className="box box1" ref="42" value="3"/>
-                <input type="text" className="box box1" ref="41" value="4"/>
-                <input type="text" className="box box1" ref="40" value="5"/>
+                {/*<img src="../images/turtle-north.png"/>*/}
+                <div className="box box1 east" ref="04" />
+                <div className="box box1" ref="03" />
+                <div className="box box1" ref="02" />
+                <div className="box box1" ref="01" />
+                <div className="box box1" ref="10" />
+                <div className="box box1" ref="14" />
+                <div className="box box1" ref="13" />
+                <div className="box box1" ref="12" />
+                <div className="box box1" ref="11" />
+                <div className="box box1" ref="00" />
+                <div className="box box1" ref="24" />
+                <div className="box box1" ref="23" />
+                <div className="box box1" ref="22" />
+                <div className="box box1" ref="21" />
+                <div className="box box1" ref="20" />
+                <div className="box box1" ref="34" />
+                <div className="box box1" ref="33" />
+                <div className="box box1" ref="32" />
+                <div className="box box1" ref="31" />
+                <div className="box box1" ref="30" />
+                <div className="box box1" ref="44" />
+                <div className="box box1" ref="43" />
+                <div className="box box1" ref="42" />
+                <div className="box box1" ref="41" />
+                <div className="box box1" ref="40" />
 
 
             </div>

@@ -1,35 +1,39 @@
 
 body {
-  margin: 40px;
+    margin: 40px;
 }
 
 .box {
-  background-color: lightgrey;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+    background-color: lightgrey;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
 }
 
-.boxyellow {
-  background-color: yellow ;
+.north {
+    background-image: url("./images/turtle-north.png");
+    background-repeat: no-repeat;
+    background-size: 80px 60px;
 }
-
 
 .wrapper {
-  width: 600px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, 50px);
-  grid-template-rows: repeat(5, 50px);
-  grid-auto-flow: column;
+    width: 600px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    grid-auto-flow: column;
 }
 
-div img {
-  -moz-transform: rotate(90deg) translateX(150px);
-  -webkit-transform: rotate(90deg) translateX(150px);
-  -o-transform: rotate(90deg) translateX(150px);
-  -ms-transform: rotate(90deg) translateX(150px);
-  transform: rotate(90deg) translateX(150px);
+.east {
+    -moz-transform: rotate(90deg) translateX(150px);
+    -webkit-transform: rotate(90deg) translateX(150px);
+    -o-transform: rotate(90deg) translateX(150px);
+    -ms-transform: rotate(90deg) translateX(150px);
+    transform: rotate(90deg) translateX(150px);
+    background-image: url("./images/turtle-north.png");
+    background-repeat: no-repeat;
+    background-size: 80px 60px;
 }
 
