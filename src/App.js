@@ -44,6 +44,13 @@ class App extends Component {
 
     }
 
+    onChangePosition = (xy) => {
+        console.log('change position',xy);
+
+        this.setState({x:xy.substring(0,1)});
+        this.setState({y:xy.substring(1,2)});
+    }
+
     //processes this.state.commands
     process = () => {
         let init = false;
@@ -163,9 +170,9 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App" onKeyDown={this.handleKeyDown}  tabIndex="0">
+            <div className="App" onKeyDown={this.handleKeyDown} >
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
-                      process={this.process} command={this.state.command} changeCommand={this.onChange} />
+                      process={this.process} command={this.state.command} changeCommand={this.onChange} changePosition={this.onChangePosition} />
             </div>
         );
     }

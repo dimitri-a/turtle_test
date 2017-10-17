@@ -38,36 +38,51 @@ export default class Box extends Component {
         }
     }
 
+    handleClick = (e) =>
+    {
+
+
+        console.log('e=',e.target.id);
+        //todo remove
+        debugger;
+       // console.log('this.refs[]=',this.refs[]);
+        this.props.changePosition(e.target.id);
+    }
+
     render() {
         this.setClass();
 
         return (
             <div className="wrapper">
-                <div className="box box1" ref="04"/>
-                <div className="box box1" ref="03"/>
-                <div className="box box1" ref="02"/>
-                <div className="box box1" ref="01"/>
-                <div className="box box1" ref="10"/>
-                <div className="box box1" ref="14"/>
-                <div className="box box1" ref="13"/>
-                <div className="box box1" ref="12"/>
-                <div className="box box1" ref="11"/>
-                <div className="box box1" ref="00"/>
-                <div className="box box1" ref="24"/>
-                <div className="box box1" ref="23"/>
-                <div className="box box1" ref="22"/>
-                <div className="box box1" ref="21"/>
-                <div className="box box1" ref="20"/>
-                <div className="box box1" ref="34"/>
-                <div className="box box1" ref="33"/>
-                <div className="box box1" ref="32"/>
-                <div className="box box1" ref="31"/>
-                <div className="box box1" ref="30"/>
-                <div className="box box1" ref="44"/>
-                <div className="box box1" ref="43"/>
-                <div className="box box1" ref="42"/>
-                <div className="box box1" ref="41"/>
-                <div className="box box1" ref="40"/>
+                <div id="04" className="box box1" onClick={this.handleClick} ref="04"/>
+                <div id="03" className="box box1" onClick={this.handleClick} ref="03"/>
+                <div id="02" className="box box1" onClick={this.handleClick} ref="02"/>
+                <div id="01" className="box box1" onClick={this.handleClick} ref="01"/>
+                <div id="00" className="box box1" onClick={this.handleClick} ref="00"/>
+
+                <div id="14" className="box box1" onClick={this.handleClick} ref="14"/>
+                <div id="13" className="box box1" onClick={this.handleClick} ref="13"/>
+                <div id="12" className="box box1" onClick={this.handleClick} ref="12"/>
+                <div id="11" className="box box1" onClick={this.handleClick} ref="11"/>
+                <div id="10" className="box box1" onClick={this.handleClick} ref="10"/>
+
+                <div id="24" className="box box1" onClick={this.handleClick} ref="24"/>
+                <div id="23" className="box box1" onClick={this.handleClick} ref="23"/>
+                <div id="22" className="box box1" onClick={this.handleClick} ref="22"/>
+                <div id="21" className="box box1" onClick={this.handleClick} ref="21"/>
+                <div id="20" className="box box1" onClick={this.handleClick} ref="20"/>
+
+                <div id="34" className="box box1" onClick={this.handleClick} ref="34"/>
+                <div id="33" className="box box1" onClick={this.handleClick} ref="33"/>
+                <div id="32" className="box box1" onClick={this.handleClick} ref="32"/>
+                <div id="31" className="box box1" onClick={this.handleClick} ref="31"/>
+                <div id="30" className="box box1" onClick={this.handleClick} ref="30"/>
+
+                <div id="44" className="box box1" onClick={this.handleClick} ref="44"/>
+                <div id="43" className="box box1" onClick={this.handleClick} ref="43"/>
+                <div id="42" className="box box1" onClick={this.handleClick} ref="42"/>
+                <div id="41" className="box box1" onClick={this.handleClick} ref="41"/>
+                <div id="40" className="box box1" onClick={this.handleClick} ref="40"/>
             </div>
         )
     }
