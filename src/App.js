@@ -49,6 +49,8 @@ class App extends Component {
         console.log('input value', command);
 
         this.setState({command: command});
+        //todo remove
+        //debugger;
 
         // is there a valid PLACE COMMAND?
         if (command.indexOf('PLACE') > -1) {
@@ -57,6 +59,8 @@ class App extends Component {
 
             if (!isValid) return;
             this.setState({init: true});
+            init = true;
+
             let placeArr = command.split(' ');
             console.log('placeArr=', placeArr);
 
@@ -67,12 +71,12 @@ class App extends Component {
             this.setState({y: coorArr[1]});
             this.setState({facing: placeArr[2]});
             console.log('coorArr=', coorArr);
-            init = true;
+
         }
 
         console.log('this.state', this.state);
         //todo remove
-        debugger;
+        //debugger;
 
         //if there was a valid PLACE command
         if (init || this.state.init) {
@@ -154,7 +158,7 @@ class App extends Component {
     render() {
         return (
             <div className="App" onKeyDown={this.handleKeyDown} tabIndex="0">
-                <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} process={this.process}/>
+                <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init} process={this.process}/>
             </div>
         );
     }

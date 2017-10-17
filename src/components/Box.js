@@ -8,50 +8,62 @@ export default class Box extends Component {
         console.log('this.props=', this.props);
     }
 
-    setClass = (x, y) => {
+    //change style of div related to props
+    setClass = () => {
+        if (this.props.x >= 0 && this.props.y >= 0 && this.props.init) {
+            //select div
+            const reference = "" + this.props.x + this.props.y;
 
-        if (this.props.x === x && this.props.y === y) {
-            console.log('bingo this.props=', this.props);
-            return 'boxyellow';
-        }
-        else {
-            return 'box box1';
+            //todo remove
+            //debugger;
+            //select div corresponding to x,y
+            let obj = this.refs[reference];
+            console.log('lo=', obj);
+
+            if (obj) {
+                console.log('in the house');
+                obj.className = 'boxyellow';
+                console.log('this.props.x=', this.props.x);
+                console.log('this.props.y=', this.props.y);
+                console.log('reference', reference);
+            }
         }
     }
 
-
     render() {
+        //todo remove
+        debugger;
+        this.setClass();
+
         return (
             <div className="wrapper">
-                <div className={this.setClass(0, 4)}>1</div>
-                <div className={this.setClass(0, 3)}>2</div>
-                <div className={this.setClass(0, 2)}>3</div>
-                <div className={this.setClass(0, 1)}>4</div>
-                <div className={this.setClass(0, 0)}>5</div>
+                <input className="box box1" type="text" ref="04" value="1"/>
+                <input type="text" className="box box1" ref="03" value="2"/>
+                <input type="text" className="box box1" ref="02" value="3"/>
+                <input type="text" className="box box1" ref="01" value="4"/>
+                <input type="text" className="box box1" ref="10" value="5"/>
+                <input type="text" className="box box1" ref="14" value="1"/>
+                <input type="text" className="box box1" ref="13" value="2"/>
+                <input type="text" className="box box1" ref="12" value="3"/>
+                <input type="text" className="box box1" ref="11" value="4"/>
+                <input type="text" className="box box1" ref="00" value="5"/>
+                <input type="text" className="box box1" ref="24" value="1"/>
+                <input type="text" className="box box1" ref="23" value="2"/>
+                <input type="text" className="box box1" ref="22" value="3"/>
+                <input type="text" className="box box1" ref="21" value="4"/>
+                <input type="text" className="box box1" ref="20" value="5"/>
+                <input type="text" className="box box1" ref="34" value="1"/>
+                <input type="text" className="box box1" ref="33" value="2"/>
+                <input type="text" className="box box1" ref="32" value="3"/>
+                <input type="text" className="box box1" ref="31" value="4"/>
+                <input type="text" className="box box1" ref="30" value="5"/>
+                <input type="text" className="box box1" ref="44" value="1"/>
+                <input type="text" className="box box1" ref="43" value="2"/>
+                <input type="text" className="box box1" ref="42" value="3"/>
+                <input type="text" className="box box1" ref="41" value="4"/>
+                <input type="text" className="box box1" ref="40" value="5"/>
 
-                <div className={this.setClass(1, 4)}>1</div>
-                <div className={this.setClass(1, 3)}>1</div>
-                <div className={this.setClass(1, 2)}>1</div>
-                <div className={this.setClass(1, 1)}>1</div>
-                <div className={this.setClass(1, 0)}>1</div>
 
-                <div className={this.setClass(2, 4)}>1</div>
-                <div className={this.setClass(2, 3)}>1</div>
-                <div className={this.setClass(2, 2)}>1</div>
-                <div className={this.setClass(2, 1)}>1</div>
-                <div className={this.setClass(2, 0)}>1</div>
-
-                <div className={this.setClass(3, 4)}>1</div>
-                <div className={this.setClass(3, 3)}>1</div>
-                <div className={this.setClass(3, 2)}>1</div>
-                <div className={this.setClass(3, 1)}>1</div>
-                <div className={this.setClass(3, 0)}>1</div>
-
-                <div className={this.setClass(4, 4)}>1</div>
-                <div className={this.setClass(4, 3)}>1</div>
-                <div className={this.setClass(4, 2)}>1</div>
-                <div className={this.setClass(4, 1)}>1</div>
-                <div className={this.setClass(4, 0)}>1</div>
             </div>
         )
     }
