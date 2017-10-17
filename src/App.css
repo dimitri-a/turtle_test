@@ -25,3 +25,11 @@ body {
   grid-auto-flow: column;
 }
 
+div img {
+  -moz-transform: rotate(90deg) translateX(150px);
+  -webkit-transform: rotate(90deg) translateX(150px);
+  -o-transform: rotate(90deg) translateX(150px);
+  -ms-transform: rotate(90deg) translateX(150px);
+  transform: rotate(90deg) translateX(150px);
+}
+

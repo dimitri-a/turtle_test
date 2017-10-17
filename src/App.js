@@ -4,9 +4,8 @@ import Grid from './components/Grid';
 
 class App extends Component {
 
-    constructor(props) {
+    constructor() {
         super();
-        this.props = props;
         this.state = {
             x: 0,
             y: 0,
@@ -45,28 +44,28 @@ class App extends Component {
 
     }
 
-    //processes commands
+    //processes this.state.commands
     process = () => {
         let init = false;
 
-        const command = document.getElementById('val').value;
+        //const this.state.command = document.getElementById('val').value;
 
-        console.log('input value', command);
+        console.log('input value', this.state.command);
 
-        this.setState({command: command});
+       // this.setState({this.state.command: this.state.command});
         //todo remove
         //debugger;
 
-        // is there a valid PLACE COMMAND?
-        if (command.indexOf('PLACE') > -1) {
-            const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(command)
+        // is there a valid PLACE this.state.command?
+        if (this.state.command.indexOf('PLACE') > -1) {
+            const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
             console.log('isValid=', isValid);
 
             if (!isValid) return;
             this.setState({init: true});
             init = true;
 
-            let placeArr = command.split(' ');
+            let placeArr = this.state.command.split(' ');
             console.log('placeArr=', placeArr);
 
             //coordinates
@@ -83,9 +82,9 @@ class App extends Component {
         //todo remove
         //debugger;
 
-        //if there was a valid PLACE command
+        //if there was a valid PLACE this.state.command
         if (init || this.state.init) {
-            switch (command) {
+            switch (this.state.command) {
                 case 'MOVE':
                     switch (this.state.facing) {
                         case 'EAST':
@@ -162,9 +161,9 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App" onKeyDown={this.handleKeyDown} tabIndex="0">
+            <div className="App" onKeyDown={this.handleKeyDown} onProcess={this.process} tabIndex="0">
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
-                      process={this.process} command={this.props.command} changeCommand={this.onChange}/>
+                      process={this.process} command={this.props.command} command={this.onChange}/>
             </div>
         );
     }
