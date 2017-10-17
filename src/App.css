@@ -12,11 +12,7 @@ body {
 }
 
 .boxyellow {
-  background-color: yellow;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  background-image: './images/turtle.png' ;
 }
 
 
