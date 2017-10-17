@@ -8,8 +8,15 @@ class Grid extends Component {
         this.props = props;
         console.log('this.props',this.props);
 
+
     }
 
+
+    handleChange = (e) =>{
+        //todo remove
+        debugger;
+        this.props.changeCommand(e.target.value)
+    }
 
 
     render() {
@@ -17,7 +24,7 @@ class Grid extends Component {
         return (
             <div className="Grid">
 
-                <input id='val' type='text' placeholder="enter command"/>
+                <input id='val' type='text' value={this.props.command} onChange={this.handleChange} placeholder="enter command"/>
 
                 <button onClick={this.props.process}>Go</button>
 

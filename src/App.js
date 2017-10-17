@@ -40,6 +40,11 @@ class App extends Component {
 
     }
 
+    onChange = (cmd) => {
+        this.setState({command: cmd});
+
+    }
+
     //processes commands
     process = () => {
         let init = false;
@@ -158,7 +163,8 @@ class App extends Component {
     render() {
         return (
             <div className="App" onKeyDown={this.handleKeyDown} tabIndex="0">
-                <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init} process={this.process}/>
+                <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
+                      process={this.process} command={this.props.command} changeCommand={this.onChange}/>
             </div>
         );
     }

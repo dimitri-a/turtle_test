@@ -32,7 +32,7 @@ export default class Box extends Component {
 
     render() {
         //todo remove
-        debugger;
+       // debugger;
         this.setClass();
 
         return (
