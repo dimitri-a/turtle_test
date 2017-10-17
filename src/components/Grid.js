@@ -12,7 +12,11 @@ class Grid extends Component {
 
     //triggers process on app.js
     handleClick = (e) => {
-        this.props.process(document.getElementById('commandText').value)
+        let inputText =document.getElementById('commandText').value;
+
+        if (inputText.length >0) {
+            this.props.process(inputText)
+        }
     }
 
 
