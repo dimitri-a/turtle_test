@@ -42,7 +42,7 @@ class App extends Component {
     onChangePosition = (xy) => {
         this.setState({x: Number(xy.substring(0, 1))});
         this.setState({y: Number(xy.substring(1, 2))},() =>{
-            this.process('PLACE ' + this.state.x + ',' + this.state.y + ' ' + this.state.facing);
+            this.process('PLACE ' + this.state.x + ',' + this.state.y + ',' + this.state.facing);
         });
 
     }
@@ -50,6 +50,8 @@ class App extends Component {
     //processes this.state.commands
     process = (cmd) => {
         let init = false;
+        //todo remove
+        debugger;
         this.setState({command: cmd}, () => {
             // check to see there a valid PLACE this.state.command?
             if (this.state.command.indexOf('PLACE') > -1) {

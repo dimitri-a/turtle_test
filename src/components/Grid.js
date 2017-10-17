@@ -22,7 +22,7 @@ class Grid extends Component {
 
     render() {
         return (
-            <div className="Grid space">
+            <div>
                 <input id='commandText' type='text' className="edge" placeholder="enter command"/>
                 <Button className="btn btn-success but" onClick={this.handleClick}>Go</Button>
                 <Box x={this.props.x} y={this.props.y} init={this.props.init} facing={this.props.facing}

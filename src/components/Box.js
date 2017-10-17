@@ -26,6 +26,8 @@ export default class Box extends Component {
             let obj = this.refs[reference];
 
             if (obj) {
+                //todo remove
+                debugger;
                 //set style new:
                 obj.className += ' ' + this.props.facing;
             }

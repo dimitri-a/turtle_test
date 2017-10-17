@@ -24,6 +24,8 @@ body {
     grid-template-columns: repeat(5, 50px);
     grid-template-rows: repeat(5, 50px);
     grid-auto-flow: column;
+    padding: 0px 10px;
+    margin: 15px;
 }
 
 .EAST {
@@ -76,10 +78,6 @@ input[type=text] {
     height: 45px;
 }
 
-.space
-{
-    padding: 10px 10px;
-}
 
 div.box:hover {
     background-color: darkgray;
