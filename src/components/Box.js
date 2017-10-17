@@ -39,11 +39,11 @@ export default class Box extends Component {
             <div className="wrapper">
                 {/*<input className="box box1" type="text" ref="04" value="1"/>*/}
 
-                {/*<div style="float:left;border:1px solid #000;">*/}
-                    {/*<span style="float:left;transform:rotate(90deg); transform:50% 50% 0;">*/}
-                        {/*<img src="http://dimox.net/wp-images/css-border-radius.jpg"/>*/}
-                    {/*</span>*/}
-                {/*</div>*/}
+                <div>
+                    <span>
+                        <img src="../images/turtle-north.png"/>
+                    </span>
+                </div>
 
 
                 <input type="text" className="box box1" ref="03" value="2"/>

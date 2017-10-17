@@ -163,7 +163,7 @@ class App extends Component {
         return (
             <div className="App" onKeyDown={this.handleKeyDown} onProcess={this.process} tabIndex="0">
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} init={this.state.init}
-                      process={this.process} command={this.props.command} command={this.onChange}/>
+                      process={this.process} command={this.state.command} changeCommand={this.onChange} />
             </div>
         );
     }
