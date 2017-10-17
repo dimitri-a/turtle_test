@@ -9,7 +9,6 @@ class Grid extends Component {
         this.props = props;
     }
 
-
     //triggers process on app.js
     handleClick = (e) => {
         let inputText =document.getElementById('commandText').value;
@@ -18,7 +17,6 @@ class Grid extends Component {
             this.props.process(inputText)
         }
     }
-
 
     render() {
         return (

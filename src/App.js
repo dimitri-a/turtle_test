@@ -99,9 +99,7 @@ class App extends Component {
 
                             case 'NORTH':
                                 if (this.state.y < 4) {
-                                    this.setState({y: this.state.y + 1}, () => {
-                                        console.log('hopefully y is changed!!', this.state)
-                                    });
+                                    this.setState({y: this.state.y + 1});
                                 }
                                 break;
                         }
