@@ -72,7 +72,7 @@ class App extends Component {
             debugger;
             console.log('check state in react TAB');
             if (this.state.command.indexOf('PLACE') > -1) {
-                const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
+                const isValid = /^[A-Z]+ [0-4],[0-4],[A-Z]+$/.test(this.state.command)
                 console.log('APP.js regex for PLACE isValid=', isValid);
 
                 if (!isValid) return;
@@ -86,7 +86,7 @@ class App extends Component {
                 let coorArr = placeArr[1].split(',');
                 this.setState({x: Number(coorArr[0])});
                 this.setState({y: Number(coorArr[1])});
-                this.setState({facing: placeArr[2]});
+                this.setState({facing: coorArr[2]});
 
                 console.log('app.js process, new x value=', coorArr[0]);
                 console.log('app.js process, new y value=', coorArr[1]);
