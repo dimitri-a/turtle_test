@@ -84,6 +84,8 @@ class App extends Component {
 
         //if there was a valid PLACE this.state.command
         if (init || this.state.init) {
+            //todo remove
+            debugger;
             switch (this.state.command) {
                 case 'MOVE':
                     switch (this.state.facing) {

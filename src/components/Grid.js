@@ -15,7 +15,7 @@ class Grid extends Component {
     handleChange = (e) =>{
         //todo remove
         console.log('this.props=',this.props);
-        debugger;
+        //debugger;
         
         this.props.changeCommand(e.target.value)
     }
