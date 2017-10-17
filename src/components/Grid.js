@@ -6,23 +6,15 @@ class Grid extends Component {
     constructor(props) {
         super();
         this.props = props;
-        console.log('this.props',this.props);
-
-
     }
 
 
     handleChange = (e) =>{
-        //todo remove
-        console.log('this.props=',this.props);
-        //debugger;
-        
         this.props.changeCommand(e.target.value)
     }
 
 
     render() {
-        console.log('this.props=', this.props);
         return (
             <div className="Grid">
 

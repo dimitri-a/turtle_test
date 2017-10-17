@@ -8,6 +8,7 @@ export default class Box extends Component {
     }
 
     //change style of div related to props
+    //set css for turtle
     setClass = () => {
         //todo remove
         //debugger;
@@ -41,11 +42,7 @@ export default class Box extends Component {
     handleClick = (e) =>
     {
 
-
-        console.log('e=',e.target.id);
-        //todo remove
-        debugger;
-       // console.log('this.refs[]=',this.refs[]);
+        console.log('BOX.js which box is clicked on ,e.target.id=',e.target.id);
         this.props.changePosition(e.target.id);
     }
 

@@ -44,45 +44,45 @@ class App extends Component {
 
     }
 
+
+    //click to change position
     onChangePosition = (xy) => {
-        console.log('change position',xy);
+        console.log('APP.js onChangePosition , ref value=',xy);
 
         this.setState({x:xy.substring(0,1)});
         this.setState({y:xy.substring(1,2)});
+
+        this.setState({command:'PLACE '+ this.state.x +',' +this.state.y +' '+ this.state.facing});
+
+        this.process();
     }
 
     //processes this.state.commands
     process = () => {
         let init = false;
 
-        //const this.state.command = document.getElementById('val').value;
+        console.log('APP.js starting App.process()');
 
-        console.log('input value', this.state.command);
+       console.log('APP.js ,check to see setstate went ok from onchangepos: this.state.x=',this.state.x);
+       console.log('this.state.y=',this.state.y);
 
-       // this.setState({this.state.command: this.state.command});
-        //todo remove
-        //debugger;
-
-        // is there a valid PLACE this.state.command?
+        // check to see there a valid PLACE this.state.command?
         if (this.state.command.indexOf('PLACE') > -1) {
             const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
-            console.log('isValid=', isValid);
+            console.log('APP.js regex for PLACE isValid=', isValid);
 
             if (!isValid) return;
+
             this.setState({init: true});
             init = true;
 
             let placeArr = this.state.command.split(' ');
-            console.log('placeArr=', placeArr);
 
             //coordinates
             let coorArr = placeArr[1].split(',');
-
             this.setState({x: coorArr[0]});
             this.setState({y: coorArr[1]});
             this.setState({facing: placeArr[2]});
-            console.log('coorArr=', coorArr);
-
         }
 
         console.log('this.state', this.state);
