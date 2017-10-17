@@ -21,8 +21,11 @@ export default class Box extends Component {
             console.log('lo=', obj);
 
             if (obj) {
-                console.log('in the house');
-                obj.className = 'boxyellow';
+                console.log('this.props.facing', this.props.facing);
+
+
+                obj.className+= ' '+this.props.facing ;
+
                 console.log('this.props.x=', this.props.x);
                 console.log('this.props.y=', this.props.y);
                 console.log('reference', reference);
@@ -40,7 +43,7 @@ export default class Box extends Component {
                 {/*<input className="box box1" type="text" ref="04" value="1"/>*/}
 
                 {/*<img src="../images/turtle-north.png"/>*/}
-                <div className="box box1 north rotate_ninety" ref="04" />
+                <div className="box box1 north " ref="04" />
                 <div className="box box1" ref="03" />
                 <div className="box box1" ref="02" />
                 <div className="box box1" ref="01" />

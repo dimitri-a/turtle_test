@@ -11,7 +11,7 @@ body {
     font-size: 150%;
 }
 
-.north {
+.NORTH {
     background-image: url("./images/turtle-north.png");
     background-repeat: no-repeat;
     background-size: 50px 50px;
@@ -26,11 +26,36 @@ body {
     grid-auto-flow: column;
 }
 
-.rotate_ninety {
-    -moz-transform: rotate(90deg) translateX(150px);
-    -webkit-transform: rotate(90deg) translateX(150px);
-    -o-transform: rotate(90deg) translateX(150px);
-    -ms-transform: rotate(90deg) translateX(150px);
-    transform: rotate(90deg) translateX(150px);
+.EAST {
+    -moz-transform: rotate(90deg) ;
+    -webkit-transform: rotate(90deg) ;
+    -o-transform: rotate(90deg) ;
+    -ms-transform: rotate(90deg) ;
+    transform: rotate(90deg) ;
+    background-image: url("./images/turtle-north.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+}
+
+.WEST {
+    -moz-transform: rotate(270deg) ;
+    -webkit-transform: rotate(270deg) ;
+    -o-transform: rotate(270deg) ;
+    -ms-transform: rotate(270deg) ;
+    transform: rotate(270deg) ;
+    background-image: url("./images/turtle-north.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+}
+
+.SOUTH {
+    -moz-transform: rotate(180deg) ;
+    -webkit-transform: rotate(180deg) ;
+    -o-transform: rotate(180deg) ;
+    -ms-transform: rotate(180deg) ;
+    transform: rotate(180deg) ;
+    background-image: url("./images/turtle-north.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
 }
 

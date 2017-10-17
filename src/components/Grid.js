@@ -30,7 +30,7 @@ class Grid extends Component {
 
                 <button onClick={this.props.process}>Go</button>
 
-                <Box x={this.props.x} y ={this.props.y} init={this.props.init}></Box>
+                <Box x={this.props.x} y ={this.props.y} init={this.props.init} facing={this.props.facing}></Box>
 
                 <pre>
                     {JSON.stringify(this.props.x, null, 2)},
