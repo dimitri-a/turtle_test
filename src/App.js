@@ -160,9 +160,7 @@ class App extends Component {
                         break;
 
                     case 'REPORT':
-                        console.log('REPORT x=', this.state.x);
-                        console.log('REPORT y=', this.state.y);
-                        console.log('REPORT facing=', this.state.facing);
+                        console.log( this.state.x +','+ this.state.y +',' +this.state.facing);
 
                     default:
                         break;
