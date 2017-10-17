@@ -8,10 +8,10 @@ class App extends Component {
         console.log('app.js constructor');
         super();
         this.state = {
-            x: 1,
-            y: 1,
+            x: 0,
+            y: 0,
             command: '',
-            facing: 'EAST',
+            facing: 'NORTH',
             init: false
         }
     }
@@ -46,29 +46,31 @@ class App extends Component {
     }
 
 
-    //click to change position
+    //click to change position from clicking a box
     onChangePosition = (xy) => {
         console.log('APP.js onChangePosition , ref value=', xy);
 
-        this.setState({x: xy.substring(0, 1)});
-        this.setState({y: xy.substring(1, 2)});
+        this.setState({x: Number(xy.substring(0, 1))});
+        this.setState({y: Number(xy.substring(1, 2))},() =>{
+            this.process('PLACE ' + this.state.x + ',' + this.state.y + ' ' + this.state.facing);
+        });
 
-        this.setState({command: 'PLACE ' + this.state.x + ',' + this.state.y + ' ' + this.state.facing});
-
-        this.process();
     }
 
     //processes this.state.commands
-    process = (command) => {
+    process = (cmd) => {
         let init = false;
 
-        console.log('app.js this should be the command from the Grid comp=', command);
+        console.log('app.js this should be the command from the Grid comp, command=', cmd);
 
         console.log('APP.js starting App.process()');
         console.log('APP.js ,check to see setstate this.state', this.state);
 
-        this.setState({command: command}, () => {
+        this.setState({command: cmd}, () => {
             // check to see there a valid PLACE this.state.command?
+            //todo remove
+            debugger;
+            console.log('check state in react TAB');
             if (this.state.command.indexOf('PLACE') > -1) {
                 const isValid = /^[A-Z]+ [0-4],[0-4] [A-Z]+$/.test(this.state.command)
                 console.log('APP.js regex for PLACE isValid=', isValid);

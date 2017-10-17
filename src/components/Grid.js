@@ -21,9 +21,7 @@ class Grid extends Component {
             <div className="Grid">
 
                 <input id='commandText' type='text' placeholder="enter command"/>
-
                 <button onClick={this.handleClick}>Go</button>
-
                 <Box x={this.props.x} y={this.props.y} init={this.props.init} facing={this.props.facing}
                      changePosition={this.props.changePosition}></Box>
 

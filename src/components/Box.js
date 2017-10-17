@@ -10,13 +10,8 @@ export default class Box extends Component {
     //change style of div related to props
     //set css for turtle
     setClass = () => {
-        //todo remove
-        //debugger;
         if (this.props.x >= 0 && this.props.y >= 0 && this.props.init) {
-
-            //todo remove
-            //debugger;
-            //reset style
+        //reset style
             for (let x = 0; x < 5; x++) {
                 for (let y = 0; y < 5; y++) {
                     const rf = "" + x + y;
@@ -29,20 +24,19 @@ export default class Box extends Component {
             const reference = "" + this.props.x + this.props.y;
 
             let obj = this.refs[reference];
-            console.log('lo=', obj);
 
             if (obj) {
-
                 //set style new:
                 obj.className += ' ' + this.props.facing;
             }
         }
     }
 
+    //Should change position and trigger a PLACE command, in APP.js::process()
     handleClick = (e) =>
     {
         console.log('BOX.js handleclick which box is clicked on ,e.target.id=',e.target.id);
-        this.props.changePosition(e.target.id);
+        this.props.changePosition(e.target.id,'PLACE');
     }
 
     render() {
