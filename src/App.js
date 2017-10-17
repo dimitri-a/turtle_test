@@ -130,7 +130,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="App" >
                 <Grid x={this.state.x} y={this.state.y} facing={this.state.facing} process={this.process}/>
             </div>
         );

@@ -21,9 +21,19 @@ export default class Box extends Component {
         }
     }
 
+    handleKeyDown = (e) => {
+        console.log('handlekeydown');
+        // arrow up/down button should select next/previous list element
+        if (e.keyCode === 38) {
+            console.log('key up??');
+        } else if (e.keyCode === 40) {
+            console.log('key up??');
+        }
+    }
+
     render() {
         return (
-            <div className="wrapper">
+            <div className="wrapper" onKeyDown={ this.handleKeyDown }>
 
                 <div className={this.setClass(0, 4)}>1</div>
                 <div className={this.setClass(0, 3)}>2</div>
